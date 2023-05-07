@@ -15,11 +15,9 @@ export class App extends Component {
   };
 
   componentDidMount() {
-    localStorage.setItem("contacts", JSON.stringify(this.state.contacts))
     const savedContacts = JSON.parse(localStorage.getItem("contacts"));
-    if (List === savedContacts) {
+    if (savedContacts) {
       this.setState({ contacts: savedContacts });
-    console.log(savedContacts) 
     }
   }
 
